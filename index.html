@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mis Tareas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Mis tareas</h1>
+    <p class="subtitulo">Anota lo que tienes pendiente y tacha lo que ya terminaste.</p>
+  </header>
+
+  <main>
+    <section class="tarjeta" aria-label="Lista de tareas">
+      <form id="formulario" novalidate>
+        <label for="nueva-tarea">Nueva tarea</label>
+        <div class="fila">
+          <input type="text" id="nueva-tarea" name="tarea" placeholder="Ej: Entregar el taller de HTML"
+                 autocomplete="off" maxlength="120" aria-describedby="mensaje-error">
+          <button type="submit" class="btn-agregar">Agregar</button>
+        </div>
+        <p id="mensaje-error" class="error" role="alert"></p>
+      </form>
+
+      <div class="resumen">
+        <span id="contador" class="contador" aria-live="polite"></span>
+        <button type="button" id="limpiar" class="btn-limpiar" hidden>Borrar completadas</button>
+      </div>
+
+      <ul id="lista" aria-label="Tareas"></ul>
+      <p id="vacio" class="vacio" hidden>No hay tareas. Agrega la primera.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Lista de tareas · HTML, CSS y JavaScript</p>
+  </footer>
+
+  <script src="apps.js"></script>
+</body>
+</html>
